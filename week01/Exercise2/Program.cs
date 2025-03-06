@@ -60,9 +60,20 @@ class Program
        {
         latterSign ="";
        }
+
        
         
         // display the grade letter in the console
         Console.WriteLine(gradeLetter + latterSign);
+        // Adding a conditional statement to tell the user he or she pass
+        if (userGradeNumber >= 70)
+        {
+            Console.WriteLine("You pass!");
+        }
+
+        else
+        {
+            Console.WriteLine("Try again next time");
+        }
     }
 }
