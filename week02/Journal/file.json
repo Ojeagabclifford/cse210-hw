@@ -1,0 +1,9 @@
+{
+    "phone": {
+        "brand": "Apple",
+        "model": "iPhone 12",
+        "color": "Blue",
+        "storage": "128GB",
+        "price": 799.99
+    }
+}
