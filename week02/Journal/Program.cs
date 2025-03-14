@@ -1,6 +1,4 @@
 using System;
-
-
 // In my program to exced the program requrement i save the file as csv file or
 //  as a text file accodring to the user input
 

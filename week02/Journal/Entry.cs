@@ -1,3 +1,5 @@
+
+
 // This class will store the journal entry information e.g: date, prompt,
 //  and entery text and then display it
 
