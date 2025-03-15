@@ -9,7 +9,7 @@ using System.IO;
 
 public class Journal
 {
-    // create a list of entries
+    // create a list of entrie
     public List <Entry> _enteries = new List<Entry>();
 
 // create a function to add entry to the journal
