@@ -31,13 +31,19 @@ public class Word
 
      public bool IsHidden()
      {
-          return true;
+          return _isHidden;
      }
      public string GetDisplayText()
      {
-        
-           _word= _isHidden ?  "____" : _word;
-             return _word;
+        if(_isHidden) {
+            
+           return  new string('_',_word.Length);
+
+           }
+        else{
+                return _word;
+            } 
+             
      }
      
 

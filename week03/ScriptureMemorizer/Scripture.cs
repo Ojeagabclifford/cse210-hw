@@ -38,12 +38,13 @@ public void HideRandomWords(int numberTohide)
     {
       int replaceIndex = random.Next(0,_words.Count);
 
-      if(_words[replaceIndex].IsHidden())
+      if(!_words[replaceIndex].IsHidden())   
       {
-        // _words[replaceIndex].Show();
-        Word word = _words[replaceIndex];
-        word.Hide();
-        _words.Add(word);
+         _words[replaceIndex].Hide();
+      }
+      else
+      {
+        i--;
       }
 
       
@@ -55,7 +56,7 @@ public void HideRandomWords(int numberTohide)
 
 public void Displaytext()
 {
-
+ Console.WriteLine(_reference.GetDisplayText());
   List<string> checkWords = new List<string>();
   
 
@@ -84,6 +85,7 @@ public bool IsCompletelyHidden()
       return false;
     }
   }
+
   return true;
 }
 
