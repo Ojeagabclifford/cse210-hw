@@ -19,7 +19,7 @@ class Program
          
         GetRandomScritures getRandomScritures = new GetRandomScritures();
         getRandomScritures.GetreferenNmae();
-        (Reference reference, string scriptureText) = getRandomScritures.display();
+        (Reference reference, string scriptureText) = getRandomScritures.Display();
 
         string text = $"{scriptureText}.";
 

@@ -40,7 +40,7 @@ public void GetreferenNmae()
 }
 
 
-public (Reference,string) display()
+public (Reference,string) Display()
 {
     
           Random random = new Random();
