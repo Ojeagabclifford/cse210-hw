@@ -1,0 +1,3 @@
+0
+SimpleGoal:ff,ff,44,False
+NegativeGoals:r,rr,-3

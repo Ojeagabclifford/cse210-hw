@@ -1,0 +1,6 @@
+1448
+ChechListGoal:ff,dd,484,444,2,2
+ChechListGoal:rr,dd,474,434,2,2
+SimpleGoal:dd,dd,50,True
+EnternalGoal:eeeeee,gghhdfz ffar ,300
+SimpleGoal:ddd,gggggggggg,60,True
