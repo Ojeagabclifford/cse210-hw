@@ -14,11 +14,13 @@ public class GoalManager
     public void Start()
     {
        
-        int choice;
+        int choice = 0;
     
-
+       
 
        do {
+        try {
+      
        DisplayPlayerinfo();
        
 
@@ -31,55 +33,50 @@ public class GoalManager
         Console.WriteLine("   4. Load Goals");
 
         Console.WriteLine("   5. Record EVent");
-        Console.WriteLine("   6. Quit");
+        Console.WriteLine("   6. Clear goals list");
+        Console.WriteLine("   7. Quit");
         Console.Write("Select a choice from the menu: ");
-
+         
         choice = int.Parse(Console.ReadLine());
+   
 
-        if(choice == 1){
-            CreateGoal();
-
-            
-
-       
-             }
-           
-
-           else if(choice ==2){
-
-            ListGoalDtails();
-
-           
-           
-
-           }
-            
-            
-            else if(choice == 3)
+   
+         switch (choice)
             {
-                SaveGoals();
-              
-
+                case 1:
+                    CreateGoal();
+                    break;
+                case 2:
+                    ListGoalDtails();
+                    break;
+                case 3:
+                    SaveGoals();
+                    break;
+                case 4:
+                    LoadGoals();
+                    break;
+                case 5:
+                    RecordEvent();
+                    break;
+                case 6:
+                ClearList();
+                break;
+                case 7:
+                    Console.WriteLine("Exiting the program. Goodbye!");
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice. Please select a valid option.");
+                    break;
             }
-            else if (choice==4){
-                LoadGoals();
-                
-            }
-               
-            else if (choice==5){
-
-                RecordEvent();
-
-                
-            }
-
-            else
-            {
-                Console.WriteLine("wrong typo");
-            }
+               }
+   catch (FormatException ex)
+   {
+    Console.WriteLine(ex.Message);
+   }
 
 
-        }while(choice !=6);
+        }while(choice !=7);
+     
           
         
 
@@ -130,8 +127,11 @@ public class GoalManager
             Console.WriteLine("   4. Nagative Goal");
             Console.Write("Which type of gaol would you like to create? ");
             int choice = int.Parse(Console.ReadLine());
+        try{
 
+       
             if(choice == 1){
+                try{
 
                 Console.Write("What is the name your of goal? ");
                 string name = Console.ReadLine();
@@ -145,8 +145,15 @@ public class GoalManager
 
 
             }
+                   catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }}
 
             else if(choice == 2){
+                try {
+
+                
 
                 Console.Write("What is the name your of goal? ");
                 string name = Console.ReadLine();
@@ -159,8 +166,15 @@ public class GoalManager
                 _goals.Add(eternalGoal);
 
 
-            }
+            }       catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }}
+        
+            
               else if(choice == 3){
+                try{
+                
 
                 Console.Write("What is the name of your goal? ");
                 string name = Console.ReadLine();
@@ -175,12 +189,18 @@ public class GoalManager
                 
                 ChechListGoal chechListGoal = new ChechListGoal(name,description,point,target,bonus);
 
-                _goals.Add(chechListGoal);
+                _goals.Add(chechListGoal);}
+                  catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
 
 
             }
+          
             else if (choice == 4)
             {
+                try{
                 Console.Write("What is the name of your goal? ");
                 string name = Console.ReadLine();
                 Console.Write("What is a short description of it? ");
@@ -194,11 +214,28 @@ public class GoalManager
                 _goals.Add(negativeGoals);
 
 
+
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+           
             }
             else
             {
                 Console.WriteLine("wrong typo");
-            }
+            } }
+            catch (FormatException ex)
+             {
+            Console.WriteLine($"Invalid input format. Please enter the correct data type.{ex.Message}");
+        }
+
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An unexpected error occurred: {ex.Message} ");
+        }
+            
 
       }
       
@@ -241,7 +278,7 @@ public class GoalManager
 
        public void SaveGoals()
       {
-         
+         try{
     //   create a function to save the entrys to a file
     // create a if statement to check if the file is a csv file
     Console.Write("What is the name of the file? ");
@@ -256,6 +293,17 @@ public class GoalManager
         Console.WriteLine("Goal hads been save");
         
         }
+        
+
+            catch (FormatException ex)
+        {
+            Console.WriteLine($"Invalid input format. Please enter the correct data type.{ex.Message}");
+        }
+
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An unexpected error occurred: {ex.Message} ");
+        }}
 
         
         // create a if statement to check if the file is a txt file
@@ -267,7 +315,7 @@ public class GoalManager
       
 
        public void LoadGoals()
-      {
+      { try{
         _goals.Clear();
          Console.Write("What is the name of the file you want to Load from? ");
               string fileName = Console.ReadLine();
@@ -287,7 +335,9 @@ public class GoalManager
                     string[] getItems = parts[1].Split(',');
 
                     
+        
 
+         
                     if(goalName =="SimpleGoal")
                     {
                         SimpleGoal simpleGoal = new SimpleGoal(getItems[0],getItems[1],getItems[2]);
@@ -324,10 +374,27 @@ public class GoalManager
                     // entry._entryText = parts[2];
                     // _enteries.Add(entry);
 
-                }
-            }
         
+                
+        }}
+        
+                }
+
+            catch (FormatException ex)
+        {
+            Console.WriteLine($"Invalid input format. Please enter the correct data type.{ex.Message}");
         }
+
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An unexpected error occurred: {ex.Message} ");
+        }}
+        public void ClearList()
+        {
+            _goals.Clear();
+            _score = 0;
+        }
+        
 
 
       }

@@ -1,7 +1,7 @@
 
 public class NegativeGoals: Goal
 {
-    private int _pointRemove;
+   
 
     public NegativeGoals(string name,string decription,string points) : base(name,decription,points)
     {
@@ -38,10 +38,10 @@ public class NegativeGoals: Goal
         
     }
 
-    public int GetPointsRemove()
-    {
-        return _pointRemove;
-    }
+    // public int GetPointsRemove()
+    // {
+    //     return _pointRemove;
+    // }
 
     
 
