@@ -5,8 +5,11 @@ public class GoalManager
 {
 
     private List<Goal> _goals = new List<Goal>();
+    private List<Goal> _goalsRevert = new List<Goal>();
 
     private int _score;
+     private int _scoreRevert;
+
 
     public GoalManager(){
 
@@ -34,7 +37,8 @@ public class GoalManager
 
         Console.WriteLine("   5. Record EVent");
         Console.WriteLine("   6. Clear goals list");
-        Console.WriteLine("   7. Quit");
+        Console.WriteLine("   7. Revert the list");
+         Console.WriteLine("  8. Quit");
         Console.Write("Select a choice from the menu: ");
          
         choice = int.Parse(Console.ReadLine());
@@ -62,6 +66,9 @@ public class GoalManager
                 ClearList();
                 break;
                 case 7:
+                RevertList();
+                break;
+                case 8:
                     Console.WriteLine("Exiting the program. Goodbye!");
                     break;
                 default:
@@ -75,7 +82,7 @@ public class GoalManager
    }
 
 
-        }while(choice !=7);
+        }while(choice !=8);
      
           
         
@@ -391,8 +398,24 @@ public class GoalManager
         }}
         public void ClearList()
         {
+           _goalsRevert.Clear();
+           _scoreRevert =+ _score;
+            foreach(Goal goal in _goals)
+            {
+                _goalsRevert.Add(goal);
+            }
             _goals.Clear();
             _score = 0;
+        }
+
+        public void RevertList()
+        {
+             foreach(Goal goal in _goalsRevert)
+            {
+                _goals.Add(goal);
+            }
+
+         _score =+ _scoreRevert;
         }
         
 
