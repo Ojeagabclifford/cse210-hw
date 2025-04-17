@@ -50,12 +50,12 @@ public class SimpleGoal : Goal
     }
 
 
-     public override string GetDetailsString()
-    {
+    //  public override string GetDetailsString()
+    // {
         
-        string status = _isComplete ? "[X]" : "[]";
-        return $"{status} {GetName()} ({GetDescription()})";
-    }
+    //     string status = IsComplete() ? "[X]" : "[]";
+    //     return $"{status} {GetName()} ({GetDescription()})";
+    // }
 
     public override string GetStringRepresentation()
     {

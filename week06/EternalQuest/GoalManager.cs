@@ -38,7 +38,7 @@ public class GoalManager
         Console.WriteLine("   5. Record EVent");
         Console.WriteLine("   6. Clear goals list");
         Console.WriteLine("   7. Revert the list");
-         Console.WriteLine("  8. Quit");
+        Console.WriteLine("   8. Quit");
         Console.Write("Select a choice from the menu: ");
          
         choice = int.Parse(Console.ReadLine());

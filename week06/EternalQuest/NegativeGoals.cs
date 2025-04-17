@@ -32,7 +32,7 @@ public class NegativeGoals: Goal
             SetPoints($"{int.Parse(GetPoints())}");
             Console.WriteLine($"Sorry! you have Lost {GetPoints()} points");
 
-            IsComplete();
+            // IsComplete();
             
             
         
@@ -51,12 +51,7 @@ public class NegativeGoals: Goal
     }
 
 
-     public override string GetDetailsString()
-    {
-        
-        string status = IsComplete()? "[@]" : "[]";
-        return $"{status} {GetName()} ({GetDescription()})";
-    }
+   
 
     public override string GetStringRepresentation()
     {

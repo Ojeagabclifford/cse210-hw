@@ -24,7 +24,7 @@
                   
 
                
-               IsComplete();
+               //IsComplete();
                Console.WriteLine($"Congratulations! you have earned {GetPoints()} points");
 
 
@@ -35,16 +35,16 @@
 
     public override bool IsComplete()
     {
-        return true;
+        return false;
     }
 
 
-     public override string GetDetailsString()
-    {
+    //  public string GetDetailsString()
+    // {
         
-        string status =  "[]";
-        return $"{status} {GetName()} ({GetDescription()})";
-    }
+    //     string status =  "[]";
+    //     return $"{status} {GetName()} ({GetDescription()})";
+    // }
 
     public override string GetStringRepresentation()
     {
@@ -56,4 +56,5 @@
        
         
     }
+
     }
